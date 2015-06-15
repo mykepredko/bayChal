@@ -1,5 +1,5 @@
 <xml xmlns="http://www.w3.org/1999/xhtml">
-  <block type="controls_whileUntil" id="7" inline="false" x="9" y="-8">
+  <block type="controls_whileUntil" id="7" inline="false" x="7" y="-116">
     <field name="MODE">UNTIL</field>
     <value name="NUMBER">
       <block type="sensor_button" id="14">
@@ -80,8 +80,36 @@
                             </value>
                             <next>
                               <block type="controls_if" id="143" inline="false">
-                                <mutation elseif="1" else="1"></mutation>
+                                <mutation elseif="2" else="1"></mutation>
                                 <value name="IF0">
+                                  <block type="logic_compare" id="219" inline="true">
+                                    <field name="OP">LT</field>
+                                    <value name="A">
+                                      <block type="sensor_object" id="220">
+                                        <field name="OBJECT">RIGHTFRONT</field>
+                                      </block>
+                                    </value>
+                                    <value name="B">
+                                      <block type="math_number" id="221">
+                                        <field name="NUM">100</field>
+                                      </block>
+                                    </value>
+                                  </block>
+                                </value>
+                                <statement name="DO0">
+                                  <block type="movement_left" id="222">
+                                    <next>
+                                      <block type="robot_delay" id="223" inline="true">
+                                        <value name="DELAY">
+                                          <block type="math_number" id="224">
+                                            <field name="NUM">100</field>
+                                          </block>
+                                        </value>
+                                      </block>
+                                    </next>
+                                  </block>
+                                </statement>
+                                <value name="IF1">
                                   <block type="logic_compare" id="155" inline="true">
                                     <field name="OP">LT</field>
                                     <value name="A">
@@ -96,7 +124,7 @@
                                     </value>
                                   </block>
                                 </value>
-                                <statement name="DO0">
+                                <statement name="DO1">
                                   <block type="movement_left" id="185">
                                     <next>
                                       <block type="robot_delay" id="211" inline="true">
@@ -109,7 +137,7 @@
                                     </next>
                                   </block>
                                 </statement>
-                                <value name="IF1">
+                                <value name="IF2">
                                   <block type="logic_compare" id="186" inline="true">
                                     <field name="OP">GT</field>
                                     <value name="A">
@@ -124,7 +152,7 @@
                                     </value>
                                   </block>
                                 </value>
-                                <statement name="DO1">
+                                <statement name="DO2">
                                   <block type="movement_right" id="198"></block>
                                 </statement>
                                 <statement name="ELSE">
