@@ -97,7 +97,17 @@
                                   </block>
                                 </value>
                                 <statement name="DO0">
-                                  <block type="movement_left" id="185"></block>
+                                  <block type="movement_left" id="185">
+                                    <next>
+                                      <block type="robot_delay" id="211" inline="true">
+                                        <value name="DELAY">
+                                          <block type="math_number" id="212">
+                                            <field name="NUM">100</field>
+                                          </block>
+                                        </value>
+                                      </block>
+                                    </next>
+                                  </block>
                                 </statement>
                                 <value name="IF1">
                                   <block type="logic_compare" id="186" inline="true">
@@ -123,7 +133,7 @@
                                       <block type="robot_delay" id="209" inline="true">
                                         <value name="DELAY">
                                           <block type="math_number" id="210">
-                                            <field name="NUM">100</field>
+                                            <field name="NUM">200</field>
                                           </block>
                                         </value>
                                       </block>
